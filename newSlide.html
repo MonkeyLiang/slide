@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8;">
+    <title>移动端触摸滑动</title>
+    <meta name="author" content="rainna" />
+    <meta name="keywords" content="rainna's js lib" />
+    <meta name="description" content="移动端触摸滑动" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection">
+    <style>
+        *{margin:0;padding:0;}
+        html,body{
+        	height: 100%;width: 100%;overflow: hidden;
+        	background-color: rgba(0,0,0,0.8);
+        }
+        li{list-style:none;}
+        .m-slider{width:100%;height:100%;overflow:hidden;position: relative;}
+        .m-slider .cnt{width:1500px;height: 100%;overflow:hidden;}
+        .m-slider .cnt li{float:left;width:300px;position: relative;height: 100%;}
+
+        .m-slider .cnt div{display:block;width:100%;height:100%;}
+        .m-slider .green{background-color: #9bc53d;}
+        .m-slider .yellow{background-color: #fde74c;}
+        .m-slider .red{background-color: #e55934;}
+        .m-slider .org{background-color: #fa7921;}
+        .m-slider .blue{background-color: #5bc0eb;}
+        .m-slider .cnt p{ position: absolute;bottom:50%;width: 100%;font-size: 40px;
+        color: #fff;font-weight: bolder;text-align: center; }
+        .m-slider .icons{text-align:center;color:#000;position: absolute;
+        bottom: 5%;width: 100%;}
+        .m-slider .icons span{margin:0 5px;display: inline-block; width: 20px;height: 20px;border-radius: 100%;
+        color:#666; font-family: "微软雅黑"; font-weight: 12px;text-align: center;line-height: 20px;}
+        .m-slider .icons .curr{color:#fff;background-color: rgba(0,0,0,0.5);}
+        .f-anim{-webkit-transition:left .2s linear;}
+        .clearfix:after{content:'\0020';
+            height:0;display: block;clear: both;overflow: hidden;visibility: hidden;
+            }
+    </style>
+</head>
+<body>
+<div class="m-slider">
+    <ul class="cnt clearfix" id="slider">
+        <li>
+             <div class="green"></div>
+            <p>0001</p>
+        </li>
+        <li>
+            <div class="yellow"></div>
+            <p>0002</p>
+        </li>
+        <li>
+             <div class="red"></div>
+            <p>0003</p>
+        </li>
+        <li>
+             <div class="org"></div>
+            <p>0004</p>
+        </li>
+        <li>
+            <div class="blue"></div>
+            <p>0005</p>
+        </li>
+    </ul>
+    <div class="icons" id="icon">
+        <span class="curr">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+</div>
+	<script src="js/slide.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		slide('#slider',{type:'vertical'});//vertical  horizontal
+	</script>
+	</body>
+</html>
